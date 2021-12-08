@@ -1,4 +1,4 @@
-# == Stage 0 - Build Frontend Assets ==
+# == Stage 1 - Build Front-End Assets ==
 # Set the base image to use for any subsequent instructions that follow and also give this build stage a name.
 ## Use node image with apline tag, lightweight image to leverage node and build the app
 FROM node:12.16.3-alpine as build
@@ -17,7 +17,7 @@ COPY . .
 ## Run app as development build
 RUN npm run build
 
-# == Stage 1 - Serve Frontend Assets ==
+# == Stage 2 - Serve Front-End Assets ==
 ## Pull nginx image from Dockerhub
 FROM nginx:stable-alpine
 ## set new workdir in this container
